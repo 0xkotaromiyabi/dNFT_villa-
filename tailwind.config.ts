@@ -61,6 +61,26 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				'villa-gold': {
+					DEFAULT: 'hsl(var(--villa-gold))',
+					foreground: 'hsl(var(--villa-gold-foreground))'
+				},
+				'villa-emerald': {
+					DEFAULT: 'hsl(var(--villa-emerald))',
+					foreground: 'hsl(var(--villa-emerald-foreground))'
+				},
+				'villa-slate': {
+					DEFAULT: 'hsl(var(--villa-slate))',
+					foreground: 'hsl(var(--villa-slate-foreground))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
 				}
 			},
 			borderRadius: {
