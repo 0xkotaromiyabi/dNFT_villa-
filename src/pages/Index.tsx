@@ -1,7 +1,7 @@
-import { VillaDashboard } from "@/components/VillaDashboard";
+import SuiVillaDApp from "@/components/SuiVillaDApp";
 
 const Index = () => {
-  return <VillaDashboard />;
+  return <SuiVillaDApp />;
 };
 
 export default Index;
