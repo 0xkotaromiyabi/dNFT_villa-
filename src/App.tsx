@@ -3,25 +3,25 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { WalletProvider, SuiClientProvider } from "@mysten/dapp-kit";
+import { WalletProvider, SuiClientProvider, createNetworkConfig } from "@mysten/dapp-kit";
 import { getFullnodeUrl } from "@mysten/sui/client";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Sui network configuration
-const networks = {
-  mainnet: { url: getFullnodeUrl("mainnet") },
+// Sui network configuration using createNetworkConfig
+const { networkConfig } = createNetworkConfig({
   testnet: { url: getFullnodeUrl("testnet") },
-};
+  mainnet: { url: getFullnodeUrl("mainnet") },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <SuiClientProvider networks={networks} defaultNetwork="testnet">
+      <SuiClientProvider networks={networkConfig} defaultNetwork="testnet">
         <WalletProvider autoConnect>
           <BrowserRouter>
             <Routes>
